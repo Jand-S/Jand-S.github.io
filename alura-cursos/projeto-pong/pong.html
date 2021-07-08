@@ -9,33 +9,7 @@
 <body>
     
 </body>
-    <script src='p5.js'>
-        let xBall = 300;
-        let yBall = 200;
-        let diameterBall = 15;
-        let radius = diameterBall/2;
-        let velocityX = 5;
-        let velocityY = 5;
-
-        function setup(){
-        createCanvas(600,400);
-        }
-
-
-        function draw(){
-        background(0);
-        circle(xBall, yBall, diameterBall);
-        xBall += velocityX;
-        yBall += velocityY;
-        
-        if (xBall + radius > width || xBall - radius <0){
-            velocityX *= -1;
-        }
-
-        if (yBall + radius > height || yBall - radius <0){
-            velocityY *= -1;
-        }
-
-        }
-    </script>
+    <script src='p5.js'></script>
+    <script src="p5.collide2d.js"></script>
+    <script src="p5-pong.js"></script>
 </html>
