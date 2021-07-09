@@ -10,13 +10,20 @@ let yRacket = 150;
 let wRacket = 10;
 let hRacket = 100;
 
-
+let playPoints = 0;
+let opponentPoints = 0;
 
 let xOpponentRacket = 586;
 let yOpponentRacket = 150;
 let yOpponentVelocity;
 
 let collisionRacket = false;
+
+let racketSong;
+let pointSong;
+function preload() {
+  racketSong = loadSound('racket.mp3');
+}
 
 
 function setup(){
@@ -35,6 +42,8 @@ racketMovement();
 collision2dRacket(xRacket,yRacket);
 collision2dRacket(xOpponentRacket,yOpponentRacket);
 racketOpponentMovement()
+includeScoreboard();
+addScore();
 }
 
 function showBall(){
@@ -67,7 +76,7 @@ function racketMovement(){
   }
 }
 function racketOpponentMovement(){
-    yOpponentVelocity = yBall - yOpponentRacket - wRacket / 2 - 30;
+    yOpponentVelocity = yBall - yOpponentRacket - wRacket / 2 -30;
     yOpponentRacket += yOpponentVelocity;
   }
 
@@ -75,5 +84,27 @@ function collision2dRacket(x1, x2){
     collisionRacket = collideRectCircle(x1, x2, wRacket, hRacket, xBall, yBall, radius);
     if (collisionRacket){
         velocityX *= -1;
+        racketSong.play();
     }
 }
+
+function includeScoreboard(){
+    stroke(255);
+    textAlign(CENTER);
+    textSize(16);
+    fill(255,40,0);
+    rect (180, 10, 40, 20);
+    rect (380, 10, 40, 20);
+    fill(255);
+    text(playPoints, 200, 26);
+    text(opponentPoints, 400, 26);
+}
+
+function addScore(){
+    if (xBall > 590){
+        playPoints += 1;
+    }else if (xBall < 10){
+        opponentPoints += 1;
+    }
+}
+
