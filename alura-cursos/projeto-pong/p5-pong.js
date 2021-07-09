@@ -22,7 +22,8 @@ let collisionRacket = false;
 let racketSong;
 let pointSong;
 function preload() {
-  racketSong = loadSound('racket.mp3');
+  racketSong = loadSound('songs/racket.mp3');
+  pointSong = loadSound('songs/point.mp3')
 }
 
 
@@ -98,6 +99,7 @@ function includeScoreboard(){
     fill(255);
     text(playPoints, 200, 26);
     text(opponentPoints, 400, 26);
+    pointSong.play();
 }
 
 function addScore(){
