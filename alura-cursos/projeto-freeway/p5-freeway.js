@@ -9,4 +9,7 @@ function draw(){
     movementTortoise();
     movementCar();
     returnCarPosition()
+    verifyCollision();
+    scoreboard();
+    addScore();
 }
