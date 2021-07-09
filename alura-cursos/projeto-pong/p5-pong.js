@@ -99,14 +99,16 @@ function includeScoreboard(){
     fill(255);
     text(playPoints, 200, 26);
     text(opponentPoints, 400, 26);
-    pointSong.play();
+    
 }
 
 function addScore(){
     if (xBall > 590){
         playPoints += 1;
+        pointSong.play();
     }else if (xBall < 10){
         opponentPoints += 1;
+        pointSong.play();
     }
 }
 
