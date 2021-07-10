@@ -20,9 +20,11 @@ function returnCarPosition(){
     for (let i = 0; i < imageCars.length; i++){
         if(bordCarCheck(xCars[i]))
         xCars[i] = 600;
+        
     }
 }
-
 function bordCarCheck(xCar){
+    
     return xCar < -100;
+    
 }

@@ -22,6 +22,7 @@ function verifyCollision(){
     for (let i = 0; i < imageCars.length; i = i+1){
         hit = collideRectCircle(xCars[i], yCars[i], wCar, hCar, xTortoise, yTortoise+20, 40);
         if (hit){
+            crashSound.play()
             yTortoise = 370;
             if (score > 0){
                 score -= 1;
@@ -40,6 +41,7 @@ function scoreboard(){
 
 function addScore(){
     if (yTortoise < 15){
+        pointSound.play();
         score += 1;
         yTortoise = 370;
     }
