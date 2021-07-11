@@ -1,0 +1,38 @@
+body {
+    background-color: #000b47;
+    align-items: center;
+}
+
+.name-project {
+    width: 80%;
+    height: 3em;
+    background-color: azure;
+    border-radius: 3px;
+    text-align: center;
+    margin: auto;
+    min-width: 615px;
+    max-width: 635px;
+    margin-top: 25px;
+}
+
+.image-project{
+    border-radius: 10px;
+    min-width: 600px;
+}
+
+.name-project:hover{
+    background-color: #b1b1b1;
+    cursor: pointer;
+}
+
+a{
+    text-decoration-line: none;
+    color: #000;
+}
+
+.name-project {
+    padding: 0.1em;
+    text-align: center;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
