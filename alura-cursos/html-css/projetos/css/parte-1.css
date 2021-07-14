@@ -1,7 +1,8 @@
 body {
     margin: 0px 15px;
     /* opacity: 50$; */
-    background-color: rgb(29, 57, 82);
+    background-image: linear-gradient(rgb(29, 57, 82), cadetblue);
+    background-color: ;
 }
 
 div h1 {
@@ -12,12 +13,16 @@ div h1 {
     background-color: cadetblue;
     color: white;
     font-style: italic;
+
 }
 
 .banner {
     margin-top: 15px;
     text-align: center;
     align-content: center;
+    align-items: center;
+    height: auto;
+    background-image: linear-gradient(rgb(29, 57, 82), cadetblue);
     /* border: 1px solid red; */
 }
 
@@ -47,12 +52,19 @@ p em strong {
     margin-top: 10px;
 }
 
+section {
+    border:2px solid teal;
+    border-radius: 0.5em;
+    padding: 15px;
+    background-color: white;
+}
+
 
 .text-content {
     /* border: 1px solid red; */
     margin-bottom: 3em;
     padding: 10px;
-    background-color: cadetblue;
+    background-image: linear-gradient(rgb(29, 57, 82), cadetblue);
     color: white;
     border-radius: 0px 10px;
     width: 40%;
