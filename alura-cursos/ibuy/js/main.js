@@ -1,5 +1,3 @@
-
-
 const BotaoFinalizar = () => {
     const clearCartList = document.querySelector('[data-carrinho-item]').innerHTML= "";
     const cartPreco = document.querySelector('[data-cart-item-preco]').innerHTML = "0,00"
@@ -37,7 +35,6 @@ const removeQuantidade = (qnt) =>{
 
 }
 
-
 const deletarItem = (evento) => {
     const botaoDeleta = evento.target;
     const cartItem = botaoDeleta.parentElement;
@@ -54,6 +51,7 @@ const deletarItem = (evento) => {
 const addCartEvent = document.querySelectorAll('[data-comprar-button]').forEach(item => {
     item.addEventListener('click', event => {
         const carrinho = document.querySelector('[data-carrinho-item]');
+        const image = item.parentElement.querySelector('[data-img-item]');
         const nome = item.parentElement.querySelector('span.item-name').textContent;
         const valor = item.parentElement.querySelector('[data-item-preco]').textContent;
         const quantidade = item.parentElement.querySelector('input.item-input').value;
@@ -61,8 +59,7 @@ const addCartEvent = document.querySelectorAll('[data-comprar-button]').forEach(
         addQuantidade(quantidade);
         const tarefa = document.createElement('div');
         tarefa.classList.add('carrinho-item');
-
-        const conteudo =   `<img src="imagens/placeholder.jpg">
+        const conteudo =   `<img src="${image.src}">
                             <div>
                                 <span>${nome}</span><br>
                                 quantidade: <span data-qnt>${quantidade}</span><span data-value class="item-value">${itemPreco}</span>
@@ -72,6 +69,19 @@ const addCartEvent = document.querySelectorAll('[data-comprar-button]').forEach(
         
         tarefa.appendChild(BotaoDeleta())
         carrinho.appendChild(tarefa);
+    })
+})
+
+const searchInput = document.querySelector('[data-search]')
+searchInput.addEventListener('input', () =>{
+    const itemName = document.querySelectorAll('.item-name').forEach(item => {
+        const nameList = item.textContent.toLowerCase()
+        const inputValue = searchInput.value.toLowerCase()
+        if (!nameList.includes(inputValue)){
+            item.parentElement.style.display = 'none';
+        }else{
+            item.parentElement.style.display = '';
+        }
     })
 })
 
